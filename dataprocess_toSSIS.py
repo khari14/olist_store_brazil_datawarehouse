@@ -2,11 +2,17 @@ import pyspark
 import os
 
 
-def load_data():
-    for root, dirs, files in os.walk('.'):
+def main():
+    current_folder = os.walk('.')
+
+    print(current_folder)
+    load_data(current_folder)
+
+
+def load_data(current_folder):
+    for root, dirs, files in current_folder:
         print(files)
-        print(dirs)
 
 
 if __name__ == '__main__':
-    load_data()
+    main()
